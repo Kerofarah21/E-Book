@@ -2,8 +2,8 @@ import 'package:bookly/Features/home/presentation/views/book_details_view.dart';
 import 'package:bookly/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 
-class FeaturedBookItem extends StatelessWidget {
-  const FeaturedBookItem({super.key});
+class CustomBookItem extends StatelessWidget {
+  const CustomBookItem({super.key});
 
   @override
   Widget build(BuildContext context) {

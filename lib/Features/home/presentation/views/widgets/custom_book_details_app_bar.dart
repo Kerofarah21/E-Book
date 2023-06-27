@@ -11,7 +11,7 @@ class CustomBookDetailsAppBar extends StatelessWidget {
         left: kPadding,
         right: kPadding,
         top: 40.0,
-        bottom: 60.0,
+        bottom: 20.0,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

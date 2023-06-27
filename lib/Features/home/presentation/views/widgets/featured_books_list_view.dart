@@ -1,4 +1,4 @@
-import 'package:bookly/Features/home/presentation/views/widgets/featured_book_item.dart';
+import 'package:bookly/Features/home/presentation/views/widgets/custom_book_item.dart';
 import 'package:flutter/material.dart';
 
 class FeaturedBooksListView extends StatelessWidget {
@@ -15,15 +15,15 @@ class FeaturedBooksListView extends StatelessWidget {
           if (index == 0) {
             return const Padding(
               padding: EdgeInsets.only(left: 22.0),
-              child: FeaturedBookItem(),
+              child: CustomBookItem(),
             );
           } else if (index == 4) {
             return const Padding(
               padding: EdgeInsets.only(right: 22.0),
-              child: FeaturedBookItem(),
+              child: CustomBookItem(),
             );
           } else {
-            return const FeaturedBookItem();
+            return const CustomBookItem();
           }
         },
         itemCount: 5,
