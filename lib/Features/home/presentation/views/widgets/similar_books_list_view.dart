@@ -1,5 +1,3 @@
-import 'package:bookly/Features/home/presentation/views/book_details_view.dart';
-import 'package:bookly/Features/home/presentation/views/widgets/custom_book_item.dart';
 import 'package:bookly/Features/home/presentation/views/widgets/navigat_to_book_details.dart';
 import 'package:flutter/material.dart';
 
