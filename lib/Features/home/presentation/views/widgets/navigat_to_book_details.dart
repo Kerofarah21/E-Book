@@ -3,8 +3,11 @@ import 'package:bookly/Features/home/presentation/views/widgets/custom_book_item
 import 'package:flutter/material.dart';
 
 class NavigatToBookDetails extends StatelessWidget {
+  final String imageUrl;
+
   const NavigatToBookDetails({
     super.key,
+    required this.imageUrl,
   });
 
   @override
@@ -16,7 +19,9 @@ class NavigatToBookDetails extends StatelessWidget {
           builder: (context) => const BookDetailsView(),
         ),
       ),
-      child: const CustomBookItem(),
+      child: CustomBookItem(
+        imageUrl: imageUrl,
+      ),
     );
   }
 }

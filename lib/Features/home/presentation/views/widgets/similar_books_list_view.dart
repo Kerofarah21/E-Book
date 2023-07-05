@@ -15,15 +15,21 @@ class SimilarBooksListView extends StatelessWidget {
           if (index == 0) {
             return const Padding(
               padding: EdgeInsets.only(left: 22.0),
-              child: NavigatToBookDetails(),
+              child: NavigatToBookDetails(
+                imageUrl: '',
+              ),
             );
           } else if (index == 4) {
             return const Padding(
               padding: EdgeInsets.only(right: 22.0),
-              child: NavigatToBookDetails(),
+              child: NavigatToBookDetails(
+                imageUrl: '',
+              ),
             );
           } else {
-            return const NavigatToBookDetails();
+            return const NavigatToBookDetails(
+              imageUrl: '',
+            );
           }
         },
         itemCount: 5,
