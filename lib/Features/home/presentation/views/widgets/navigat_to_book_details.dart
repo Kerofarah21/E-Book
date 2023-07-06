@@ -1,5 +1,5 @@
 import 'package:bookly/Features/home/presentation/views/book_details_view.dart';
-import 'package:bookly/Features/home/presentation/views/widgets/custom_book_item.dart';
+import 'package:bookly/Features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
 
 class NavigatToBookDetails extends StatelessWidget {
@@ -19,7 +19,7 @@ class NavigatToBookDetails extends StatelessWidget {
           builder: (context) => const BookDetailsView(),
         ),
       ),
-      child: CustomBookItem(
+      child: CustomBookImage(
         imageUrl: imageUrl,
       ),
     );
