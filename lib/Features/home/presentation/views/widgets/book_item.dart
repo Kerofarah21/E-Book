@@ -30,7 +30,7 @@ class BookItem extends StatelessWidget {
           child: Row(
             children: [
               CustomBookImage(
-                imageUrl: book.volumeInfo!.imageLinks!.thumbnail!,
+                imageUrl: book.volumeInfo!.imageLinks?.thumbnail ?? '',
               ),
               const SizedBox(
                 width: 30.0,
@@ -49,7 +49,7 @@ class BookItem extends StatelessWidget {
                       height: 3.0,
                     ),
                     Text(
-                      book.volumeInfo!.authors![0],
+                      book.volumeInfo!.authors?[0] ?? 'Unknown',
                       style: Styles.textStyle14.copyWith(
                         fontWeight: FontWeight.w500,
                         color: Colors.white.withOpacity(0.7),
@@ -69,7 +69,7 @@ class BookItem extends StatelessWidget {
                         const Spacer(),
                         BookInfo(
                           language: book.volumeInfo!.language!,
-                          pageCount: book.volumeInfo!.pageCount!,
+                          pageCount: book.volumeInfo!.pageCount ?? 0,
                         ),
                       ],
                     ),

@@ -22,7 +22,7 @@ class CustomBookImage extends StatelessWidget {
             errorWidget: (context, url, error) => const Center(
               child: Icon(
                 Icons.error,
-                size: 100.0,
+                size: 50.0,
               ),
             ),
           ),

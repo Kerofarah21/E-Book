@@ -35,7 +35,7 @@ class BookInfo extends StatelessWidget {
           width: 9,
         ),
         Text(
-          '($pageCount)',
+          pageCount == 0 ? '(not counted)' : '($pageCount)',
           style: Styles.textStyle14.copyWith(
             color: Colors.white.withOpacity(.5),
           ),
