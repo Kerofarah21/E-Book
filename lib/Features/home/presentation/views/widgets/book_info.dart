@@ -2,11 +2,17 @@ import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class BookRating extends StatelessWidget {
+class BookInfo extends StatelessWidget {
   final MainAxisAlignment mainAxisAlignment;
+  final String language;
+  final int pageCount;
 
-  const BookRating(
-      {super.key, this.mainAxisAlignment = MainAxisAlignment.start});
+  const BookInfo({
+    super.key,
+    this.mainAxisAlignment = MainAxisAlignment.start,
+    required this.language,
+    required this.pageCount,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -14,22 +20,22 @@ class BookRating extends StatelessWidget {
       mainAxisAlignment: mainAxisAlignment,
       children: [
         const Icon(
-          FontAwesomeIcons.solidStar,
+          FontAwesomeIcons.language,
           size: 14,
           color: Color(0xffFFDD4F),
         ),
         const SizedBox(
           width: 6.3,
         ),
-        const Text(
-          '4.8',
+        Text(
+          language,
           style: Styles.textStyle16,
         ),
         const SizedBox(
           width: 9,
         ),
         Text(
-          '(2390)',
+          '($pageCount)',
           style: Styles.textStyle14.copyWith(
             color: Colors.white.withOpacity(.5),
           ),

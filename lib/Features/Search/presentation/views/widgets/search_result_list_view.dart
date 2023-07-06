@@ -9,7 +9,8 @@ class SearchResultListView extends StatelessWidget {
     return ListView.builder(
       physics: const BouncingScrollPhysics(),
       padding: EdgeInsets.zero,
-      itemBuilder: (context, index) => const BookItem(),
+      // itemBuilder: (context, index) => const BookItem(),
+      itemBuilder: (context, index) => const Text('data'),
       itemCount: 10,
     );
   }
