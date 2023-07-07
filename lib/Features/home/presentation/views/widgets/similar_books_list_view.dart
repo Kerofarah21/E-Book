@@ -26,7 +26,7 @@ class SimilarBooksListView extends StatelessWidget {
                       book: state.books[index],
                     ),
                   );
-                } else if (index == 4) {
+                } else if (index == state.books.length - 1) {
                   return Padding(
                     padding: const EdgeInsets.only(right: 22.0),
                     child: NavigatToBookDetails(
