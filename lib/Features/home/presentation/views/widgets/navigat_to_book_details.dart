@@ -1,13 +1,14 @@
+import 'package:bookly/Features/home/data/models/book_model/book_model.dart';
 import 'package:bookly/Features/home/presentation/views/book_details_view.dart';
 import 'package:bookly/Features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
 
 class NavigatToBookDetails extends StatelessWidget {
-  final String imageUrl;
+  final BookModel book;
 
   const NavigatToBookDetails({
     super.key,
-    required this.imageUrl,
+    required this.book,
   });
 
   @override
@@ -16,11 +17,11 @@ class NavigatToBookDetails extends StatelessWidget {
       onTap: () => Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => const BookDetailsView(),
+          builder: (context) => BookDetailsView(book: book),
         ),
       ),
       child: CustomBookImage(
-        imageUrl: imageUrl,
+        imageUrl: book.volumeInfo!.imageLinks?.thumbnail ?? '',
       ),
     );
   }

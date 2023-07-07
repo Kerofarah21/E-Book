@@ -22,7 +22,7 @@ class BookItem extends StatelessWidget {
         onTap: () => Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => const BookDetailsView(),
+            builder: (context) => BookDetailsView(book: book),
           ),
         ),
         child: SizedBox(

@@ -23,25 +23,19 @@ class FeaturedBooksListView extends StatelessWidget {
                   return Padding(
                     padding: const EdgeInsets.only(left: 22.0),
                     child: NavigatToBookDetails(
-                      imageUrl: state
-                              .books[index].volumeInfo!.imageLinks?.thumbnail ??
-                          '',
+                      book: state.books[index],
                     ),
                   );
                 } else if (index == state.books.length - 1) {
                   return Padding(
                     padding: const EdgeInsets.only(right: 22.0),
                     child: NavigatToBookDetails(
-                      imageUrl: state
-                              .books[index].volumeInfo!.imageLinks?.thumbnail ??
-                          '',
+                      book: state.books[index],
                     ),
                   );
                 } else {
                   return NavigatToBookDetails(
-                    imageUrl:
-                        state.books[index].volumeInfo!.imageLinks?.thumbnail ??
-                            '',
+                    book: state.books[index],
                   );
                 }
               },
