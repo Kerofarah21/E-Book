@@ -38,8 +38,7 @@ class BooksAction extends StatelessWidget {
                 bottomRight: Radius.circular(16.0),
               ),
               onPressed: () {
-                launchCustomUrl(context,
-                    book.saleInfo!.buyLink ?? book.volumeInfo!.previewLink);
+                launchCustomUrl(context, book.volumeInfo!.previewLink);
               },
             ),
           )
@@ -49,8 +48,7 @@ class BooksAction extends StatelessWidget {
   }
 
   String getText(BookModel book) {
-    if (book.saleInfo!.buyLink == null &&
-        book.volumeInfo!.previewLink == null) {
+    if (book.volumeInfo!.previewLink == null) {
       return 'Not Availabe';
     }
     return 'Preview';

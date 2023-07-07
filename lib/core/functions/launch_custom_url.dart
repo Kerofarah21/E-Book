@@ -6,7 +6,10 @@ Future<void> launchCustomUrl(context, String? url) async {
     Uri uri = Uri.parse(url);
 
     if (await canLaunchUrl(uri)) {
-      await launchUrl(uri);
+      await launchUrl(
+        uri,
+        mode: LaunchMode.externalApplication,
+      );
     } else {
       customSnackBar(context, 'Cannot launch $url');
     }
