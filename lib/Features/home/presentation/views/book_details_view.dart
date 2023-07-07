@@ -14,9 +14,11 @@ class BookDetailsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => SimilarBooksCubit(getIt.get<HomeRepoImp>())
-        ..getSimilarBooks(categoryName: book.volumeInfo!.categories![0]),
-      child: const Scaffold(
-        body: BookDetailsViewBody(),
+        ..getSimilarBooks(
+            categoryName: book.volumeInfo!.categories?[0] ??
+                book.volumeInfo!.title!.split(' ')[0]),
+      child: Scaffold(
+        body: BookDetailsViewBody(book: book),
       ),
     );
   }

@@ -39,7 +39,7 @@ class SimilarBooksListView extends StatelessWidget {
                   );
                 }
               },
-              itemCount: 5,
+              itemCount: state.books.length,
             ),
           );
         } else if (state is SimilarBooksFailure) {

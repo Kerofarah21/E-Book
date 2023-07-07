@@ -1,3 +1,4 @@
+import 'package:bookly/Features/home/data/models/book_model/book_model.dart';
 import 'package:bookly/Features/home/presentation/views/widgets/book_info.dart';
 import 'package:bookly/Features/home/presentation/views/widgets/books_action.dart';
 import 'package:bookly/Features/home/presentation/views/widgets/custom_book_image.dart';
@@ -5,7 +6,9 @@ import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsSection extends StatelessWidget {
-  const BookDetailsSection({super.key});
+  final BookModel book;
+
+  const BookDetailsSection({super.key, required this.book});
 
   @override
   Widget build(BuildContext context) {
@@ -17,15 +20,15 @@ class BookDetailsSection extends StatelessWidget {
           padding: EdgeInsets.symmetric(
             horizontal: width * .2,
           ),
-          child: const CustomBookImage(
-            imageUrl: '',
+          child: CustomBookImage(
+            imageUrl: book.volumeInfo!.imageLinks?.thumbnail ?? '',
           ),
         ),
         const SizedBox(
           height: 43,
         ),
-        const Text(
-          'Harry Potter and The Goblet of Fire',
+        Text(
+          book.volumeInfo!.title!,
           style: Styles.textStyle30,
           textAlign: TextAlign.center,
         ),
@@ -35,7 +38,7 @@ class BookDetailsSection extends StatelessWidget {
         Opacity(
           opacity: .7,
           child: Text(
-            'J.K. Rawling',
+            book.volumeInfo!.authors?[0] ?? 'Unknown',
             style: Styles.textStyle18.copyWith(
               fontWeight: FontWeight.w500,
               fontStyle: FontStyle.italic,
@@ -45,10 +48,10 @@ class BookDetailsSection extends StatelessWidget {
         const SizedBox(
           height: 18.0,
         ),
-        const BookInfo(
+        BookInfo(
           mainAxisAlignment: MainAxisAlignment.center,
-          language: 'En',
-          pageCount: 5,
+          language: book.volumeInfo!.language!,
+          pageCount: book.volumeInfo!.pageCount!,
         ),
         const SizedBox(
           height: 37.0,
