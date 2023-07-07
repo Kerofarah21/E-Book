@@ -1,18 +1,22 @@
+import 'package:bookly/Features/home/data/models/book_model/book_model.dart';
+import 'package:bookly/core/functions/launch_custom_url.dart';
 import 'package:bookly/core/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
 class BooksAction extends StatelessWidget {
-  const BooksAction({super.key});
+  final BookModel book;
+
+  const BooksAction({super.key, required this.book});
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(
+    return Padding(
+      padding: const EdgeInsets.symmetric(
         horizontal: 38.0,
       ),
       child: Row(
         children: [
-          Expanded(
+          const Expanded(
             child: CustomButton(
               text: 'Free',
               backgroundColor: Colors.white,
@@ -26,17 +30,29 @@ class BooksAction extends StatelessWidget {
           ),
           Expanded(
             child: CustomButton(
-              text: 'Preview',
-              backgroundColor: Color(0xffEF8262),
+              text: getText(book),
+              backgroundColor: const Color(0xffEF8262),
               textColor: Colors.white,
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 topRight: Radius.circular(16.0),
                 bottomRight: Radius.circular(16.0),
               ),
+              onPressed: () {
+                launchCustomUrl(context,
+                    book.saleInfo!.buyLink ?? book.volumeInfo!.previewLink);
+              },
             ),
           )
         ],
       ),
     );
+  }
+
+  String getText(BookModel book) {
+    if (book.saleInfo!.buyLink == null &&
+        book.volumeInfo!.previewLink == null) {
+      return 'Not Availabe';
+    }
+    return 'Preview';
   }
 }
