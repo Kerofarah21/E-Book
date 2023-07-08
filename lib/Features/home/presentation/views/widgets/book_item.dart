@@ -54,6 +54,8 @@ class BookItem extends StatelessWidget {
                         fontWeight: FontWeight.w500,
                         color: Colors.white.withOpacity(0.7),
                       ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                     ),
                     const SizedBox(
                       height: 3.0,

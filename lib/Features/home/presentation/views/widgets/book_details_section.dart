@@ -43,6 +43,7 @@ class BookDetailsSection extends StatelessWidget {
               fontWeight: FontWeight.w500,
               fontStyle: FontStyle.italic,
             ),
+            textAlign: TextAlign.center,
           ),
         ),
         const SizedBox(
