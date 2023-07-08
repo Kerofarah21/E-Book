@@ -1,3 +1,4 @@
+import 'package:bookly/Features/Search/presentation/views/search_view.dart';
 import 'package:bookly/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -25,9 +26,16 @@ class CustomBookDetailsAppBar extends StatelessWidget {
             ),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const SearchView(),
+                ),
+              );
+            },
             icon: const Icon(
-              Icons.shopping_cart_outlined,
+              Icons.search,
             ),
           ),
         ],
