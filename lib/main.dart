@@ -1,4 +1,4 @@
-import 'package:bookly/Features/Splash/presentation/views/splash_view.dart';
+import 'package:bookly/Features/Splash/presentation/views/lock_view.dart';
 import 'package:bookly/Features/home/data/repos/home_repo_imp.dart';
 import 'package:bookly/Features/home/presentation/view_models/featured_books_cubit/featured_books_cubit.dart';
 import 'package:bookly/Features/home/presentation/view_models/newest_books_cubit/newest_books_cubit.dart';
@@ -40,7 +40,7 @@ class BooklyApp extends StatelessWidget {
               GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme),
           primaryColor: const Color(0xffEF8262),
         ),
-        home: const SplashView(),
+        home: const LockView(),
       ),
     );
   }
