@@ -36,9 +36,14 @@ class LockView extends StatelessWidget {
                   );
                 }
               },
-              child: const Text(
+              style: TextButton.styleFrom(
+                backgroundColor: Colors.blue,
+              ),
+              child: Text(
                 'Continue to the app',
-                style: Styles.textStyle20,
+                style: Styles.textStyle20.copyWith(
+                  color: Colors.white,
+                ),
               ),
             ),
           ],
